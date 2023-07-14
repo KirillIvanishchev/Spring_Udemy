@@ -1,0 +1,67 @@
+
+…
+java:S11927"jDefine a constant instead of duplicating this literal "Whole list of Students in the Database..." 3 times.(ºû şüÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ğ¥ş§
+G
+java:S1602",Remove useless curly braces around statement(¸éâçıÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(Àİ† ÿÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(şÑüØüÿÿÿÿ
+V	java:S125""<This block of commented-out lines of code should be removed.(öĞ’¸ùÿÿÿÿ
+Q	java:S125%"<This block of commented-out lines of code should be removed.(Ü”ÜÍ
+V	java:S125("<This block of commented-out lines of code should be removed.(ö×Ñœşÿÿÿÿ
+Q	java:S125+"<This block of commented-out lines of code should be removed.(Óİ—»
+V	java:S125."<This block of commented-out lines of code should be removed.(ÀıÕ°ÿÿÿÿÿ
+V	java:S1251"<This block of commented-out lines of code should be removed.(•”ÑÎÿÿÿÿÿ
+S	java:S1067"9Replace this use of System.out or System.err by a logger.(ºû şüÿÿÿÿ
+N	java:S106:"9Replace this use of System.out or System.err by a logger.(„íí
+N	java:S106>"9Replace this use of System.out or System.err by a logger.(Á˜àŒ
+S	java:S106B"9Replace this use of System.out or System.err by a logger.(Ó†‡…ÿÿÿÿÿ
+S	java:S106G"9Replace this use of System.out or System.err by a logger.(ºû şüÿÿÿÿ
+N	java:S106J"9Replace this use of System.out or System.err by a logger.(„íí
+N	java:S106N"9Replace this use of System.out or System.err by a logger.(ß´¿
+S	java:S106R"9Replace this use of System.out or System.err by a logger.(Õã¯­ûÿÿÿÿ
+N	java:S106U"9Replace this use of System.out or System.err by a logger.(„íí
+S	java:S106\"9Replace this use of System.out or System.err by a logger.(ºû şüÿÿÿÿ
+N	java:S106_"9Replace this use of System.out or System.err by a logger.(„íí
+S	java:S106d"9Replace this use of System.out or System.err by a logger.(Š‚İìûÿÿÿÿ
+S	java:S106h"9Replace this use of System.out or System.err by a logger.(Õã¯­ûÿÿÿÿ
+N	java:S106k"9Replace this use of System.out or System.err by a logger.(„íí
+S	java:S106q"9Replace this use of System.out or System.err by a logger.(‚îü¥üÿÿÿÿ
+S	java:S106v"9Replace this use of System.out or System.err by a logger.(„¤›Ùúÿÿÿÿ
+V	java:S125t"<This block of commented-out lines of code should be removed.(§‹Çÿÿÿÿÿ
+N	java:S106w"9Replace this use of System.out or System.err by a logger.(ëªµé
+?
+java:S2140x")Use "java.util.Random.nextInt()" instead.(†‹É
+N	java:S106}"9Replace this use of System.out or System.err by a logger.(ÉŸÄ¹
+O	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(¸‰¡
+T	java:S106†"9Replace this use of System.out or System.err by a logger.(ôÂ½Æûÿÿÿÿ
+T	java:S106Œ"9Replace this use of System.out or System.err by a logger.(÷ãÆµùÿÿÿÿ
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ôÂ½Æûÿÿÿÿ
+T	java:S106•"9Replace this use of System.out or System.err by a logger.(øŞƒûùÿÿÿÿ
+T	java:S106™"9Replace this use of System.out or System.err by a logger.(ÀáïŞùÿÿÿÿ
+O	java:S106"9Replace this use of System.out or System.err by a logger.(Àˆ¸Ü
+T	java:S106¡"9Replace this use of System.out or System.err by a logger.(¤Ñµªúÿÿÿÿ
+T	java:S106£"9Replace this use of System.out or System.err by a logger.(ôÂ½Æûÿÿÿÿ
+O	java:S106©"9Replace this use of System.out or System.err by a logger.(ŞºÿÈ
+O	java:S106°"9Replace this use of System.out or System.err by a logger.(Õ†˜»
+T	java:S106´"9Replace this use of System.out or System.err by a logger.(Í‚´Àşÿÿÿÿ
+O	java:S106¶"9Replace this use of System.out or System.err by a logger.(„íí
+T	java:S106½"9Replace this use of System.out or System.err by a logger.(øŞƒûùÿÿÿÿ
+T	java:S106Á"9Replace this use of System.out or System.err by a logger.(ÀáïŞùÿÿÿÿ
+O	java:S106Å"9Replace this use of System.out or System.err by a logger.(ºş»ª
+Q
+java:S11445"6Remove this unused private "deleteAllStudents" method.(Ó†¡øÿÿÿÿ
+Q
+java:S1144E"6Remove this unused private "deleteStudentById" method.(Œ­‡©üÿÿÿÿ
+Y
+java:S1144Z">Remove this unused private "deleteStudentsByFirstName" method.(Š²ùğüÿÿÿÿ
+M
+java:S1144o"2Remove this unused private "updateStudent" method.(†¯Ğøÿÿÿÿ
+W
+java:S1144€";Remove this unused private "findStudentsByLastName" method.(è£—øÿÿÿÿ
+U
+java:S1144Š"9Remove this unused private "readMultipleStudents" method.(›şƒÎùÿÿÿÿ
+L
+java:S1144“"0Remove this unused private "readStudent" method.(Ô‡æ“øÿÿÿÿ
+I
+java:S1144»"2Remove this unused private "createStudent" method.(ƒºœæ

@@ -1,0 +1,6 @@
+
+f	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶œ÷Ñ
+|
+java:S1488o"fImmediately return this expression instead of assigning it to the temporary variable "numRowsDeleted".(È›¡×
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ÿè»‚
+V	java:S1254"<This block of commented-out lines of code should be removed.(á¡üÜùÿÿÿÿ

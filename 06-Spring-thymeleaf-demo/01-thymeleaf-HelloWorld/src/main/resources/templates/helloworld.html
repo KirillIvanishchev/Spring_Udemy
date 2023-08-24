@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Demo Example</title>
+
+    <!-- reference CSS style -->
+    <link rel="stylesheet" th:href="@{/css/css_demo.css}"/>
+</head>
+<body>
+    <h1 th:text="'Hello World!'" class = "css_demo_class_1" />
+    <h4 th:text="'Time on a server is:' + ${theDate}" class = "css_demo_class_2"/>
+</body>
+</html>

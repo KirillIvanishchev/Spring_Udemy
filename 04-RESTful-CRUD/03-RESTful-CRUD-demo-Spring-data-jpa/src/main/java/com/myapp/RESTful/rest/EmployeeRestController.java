@@ -1,6 +1,5 @@
 package com.myapp.RESTful.rest;
 
-import com.myapp.RESTful.repository.EmployeeDAO_Repository;
 import com.myapp.RESTful.entity.Employee;
 import com.myapp.RESTful.service.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

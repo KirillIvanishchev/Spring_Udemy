@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Access denied page</title>
+</head>
+<body>
+
+<h2>Access denied</h2>
+<hr>
+<p>
+  Access denied, no access for this area.
+</p>
+<hr>
+<button onclick="window.location.href='/'" class="btn btn-success col-2 mb-4 w-25">Go to the home page</button>
+<form action="#" th:action="@{/logout}" method="post">
+  <button type="submit" class="btn btn-danger">Logout</button>
+</form>
+
+</body>
+</html>

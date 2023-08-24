@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo Spring Security Application</title>
+    </head>
+    <body>
+        <h2>Home Page</h2>
+        <hr>Welcome to Spring Security Application</hr>
+
+        <hr>
+        <p>
+            <!-- DISPLAYS USER, THAT LOGGED IN -->
+            User: <span sec:authentication="principal.username"></span>
+            <br><br>
+            Role (s): <span sec:authentication="principal.authorities"></span>
+        </p>
+
+        <!-- Added div to hide link for other users without access-->
+        <div sec:authorize="hasRole('DEVELOPER')">
+            <!-- add a link with a restricted access ONLY for DEVELOPERS-->
+            <p>
+                <a th:href="@{/developers}">link for developers</a>
+            </p>
+        </div>
+
+        <!-- Added div to hide link for other users without access-->
+        <div sec:authorize="hasRole('ADMIN')">
+            <!-- add a link with a restricted access ONLY for ADMINS-->
+            <p>
+                <a th:href="@{/admins}">link for admins</a>
+            </p>
+        </div>
+
+        <hr>
+        <form action="#" th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </body>
+</html>

@@ -6,86 +6,86 @@ use `hb-05-many-to-many`;
 
 SET FOREIGN_KEY_CHECKS = 0;
 
-CREATE TABLE `instructor_detail` (
+CREATE TABLE `account_details` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `youtube_channel` varchar(128) DEFAULT NULL,
-  `hobby` varchar(45) DEFAULT NULL,
+  `link` varchar(128) DEFAULT NULL,
+  `description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE `instructor` (
+CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `instructor_detail_id` int DEFAULT NULL,
+  `account_details_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_DETAIL_idx` (`instructor_detail_id`),
-  CONSTRAINT `FK_DETAIL` FOREIGN KEY (`instructor_detail_id`) 
-  REFERENCES `instructor_detail` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK_ACCOUNT_DETAILS_idx` (`account_details_id`),
+  CONSTRAINT `FK_ACCOUNT_DETAILS_idx` FOREIGN KEY (`account_details_id`) 
+  REFERENCES `account_details` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE `course` (
+CREATE TABLE `playable_character` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(128) DEFAULT NULL,
-  `instructor_id` int DEFAULT NULL,
+  `name` varchar(128) DEFAULT NULL,
+  `user_id` int DEFAULT NULL,playable_character
   
   PRIMARY KEY (`id`),
   
-  UNIQUE KEY `TITLE_UNIQUE` (`title`),
+  UNIQUE KEY `UNIQUE_NAME` (`name`),
   
-  KEY `FK_INSTRUCTOR_idx` (`instructor_id`),
+  KEY `FK_USER_idx` (`user_id`),
   
-  CONSTRAINT `FK_INSTRUCTOR` 
-  FOREIGN KEY (`instructor_id`) 
-  REFERENCES `instructor` (`id`) 
+  CONSTRAINT `FK_USER` 
+  FOREIGN KEY (`user_id`) 
+  REFERENCES `user` (`id`) 
   
   ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE `review` (
+CREATE TABLE `item` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `comment` varchar(256) DEFAULT NULL,
-  `course_id` int DEFAULT NULL,
+  `description` varchar(256) DEFAULT NULL,
+  `playable_character_id` int DEFAULT NULL,
 
   PRIMARY KEY (`id`),
 
-  KEY `FK_COURSE_ID_idx` (`course_id`),
+  KEY `FK_PLAYABLE_CHARACTER_ID_idx` (`playable_character_id`),
 
-  CONSTRAINT `FK_COURSE` 
-  FOREIGN KEY (`course_id`) 
-  REFERENCES `course` (`id`) 
+  CONSTRAINT `FK_PLAYABLE_CHARACTER` 
+  FOREIGN KEY (`playable_character_id`) 
+  REFERENCES `playable_character` (`id`) 
 
   ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE `student` (
+CREATE TABLE `class` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
+  `class_role` varchar(45) DEFAULT NULL,
+  `class_skill` varchar(45) DEFAULT NULL,
+  `description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE `course_student` (
-  `course_id` int NOT NULL,
-  `student_id` int NOT NULL,
+CREATE TABLE `playable_character-class` (
+  `playable_character_id` int NOT NULL,
+  `class_id` int NOT NULL,
   
-  PRIMARY KEY (`course_id`,`student_id`),
+  PRIMARY KEY (`playable_character_id`,`class_id`),
   
-  KEY `FK_STUDENT_idx` (`student_id`),
+  KEY `FK_PLAYABLE_CHARACTER_idx` (`playable_character_id`),
   
-  CONSTRAINT `FK_COURSE_05` FOREIGN KEY (`course_id`) 
-  REFERENCES `course` (`id`) 
+  CONSTRAINT `FK_CLASS_05` FOREIGN KEY (`class_id`) 
+  REFERENCES `class` (`id`) 
   ON DELETE NO ACTION ON UPDATE NO ACTION,
   
-  CONSTRAINT `FK_STUDENT` FOREIGN KEY (`student_id`) 
-  REFERENCES `student` (`id`) 
+  CONSTRAINT `FK_PLAYABLE_CHARACTER_05` FOREIGN KEY (`playable_character_id`) 
+  REFERENCES `playable_character` (`id`) 
   ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

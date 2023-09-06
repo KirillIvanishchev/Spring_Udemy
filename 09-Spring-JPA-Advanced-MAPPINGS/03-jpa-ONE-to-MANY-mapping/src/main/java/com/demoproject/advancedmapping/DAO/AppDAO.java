@@ -1,5 +1,6 @@
 package com.demoproject.advancedmapping.DAO;
 import com.demoproject.advancedmapping.entities.Character;
+import com.demoproject.advancedmapping.entities.Item;
 import com.demoproject.advancedmapping.entities.User;
 import com.demoproject.advancedmapping.entities.UserDetails;
 
@@ -27,4 +28,10 @@ public interface AppDAO {
     void updateCharacter(Character character);
 
     void deleteCharacterById(Long id);
+
+    void saveItem(Item item);
+    void saveCharacter(Character character);
+    Character findCharacterAndItemsById(Long id);
+    void deleteCharacterAndItemsById(Long id);
+    void deleteCharacterWithoutJoinFetch(Long id);
 }

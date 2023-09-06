@@ -2,6 +2,9 @@ package com.demoproject.advancedmapping.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "playable_character")
 public class Character {
@@ -26,6 +29,17 @@ public class Character {
     @JoinColumn(name = "user_id")
     User user;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "playable_character_id")
+    List<Item> items;
+
+    public void addItem(Item item) {
+        if(items == null) {
+            items = new ArrayList<>();
+        }
+        items.add(item);
+    }
+
     public Long getId() {
         return id;
     }
@@ -48,6 +62,14 @@ public class Character {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @Override

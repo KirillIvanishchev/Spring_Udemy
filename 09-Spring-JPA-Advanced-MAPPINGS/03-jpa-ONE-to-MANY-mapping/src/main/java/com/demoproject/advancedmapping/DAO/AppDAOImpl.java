@@ -1,6 +1,7 @@
 package com.demoproject.advancedmapping.DAO;
 
 import com.demoproject.advancedmapping.entities.Character;
+import com.demoproject.advancedmapping.entities.Item;
 import com.demoproject.advancedmapping.entities.User;
 import com.demoproject.advancedmapping.entities.UserDetails;
 import jakarta.persistence.EntityManager;
@@ -111,5 +112,39 @@ public class AppDAOImpl implements AppDAO{
     public void deleteCharacterById(Long id) {
         Character character = findCharacterById(id);
         entityManager.remove(character);
+    }
+
+    @Override
+    @Transactional
+    public void saveItem(Item item) {
+        entityManager.persist(item);
+    }
+
+    @Override
+    @Transactional
+    public void saveCharacter(Character character) {
+        entityManager.persist(character);
+    }
+
+    @Override
+    public Character findCharacterAndItemsById(Long id) {
+        TypedQuery<Character> query = entityManager.createQuery(
+                            "SELECT key FROM Character key " +
+                            "JOIN FETCH key.items " +
+                            "WHERE key.id = :data", Character.class);
+        query.setParameter("data", id);
+        Character character = query.getSingleResult();
+        return character;
+    }
+
+    @Override
+    @Transactional
+    public void deleteCharacterAndItemsById(Long id) {
+        entityManager.remove(findCharacterAndItemsById(id));
+    }
+
+    @Override
+    public void deleteCharacterWithoutJoinFetch(Long id) {
+
     }
 }

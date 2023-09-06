@@ -2,6 +2,7 @@ package com.demoproject.advancedmapping;
 
 import com.demoproject.advancedmapping.DAO.AppDAO;
 import com.demoproject.advancedmapping.entities.Character;
+import com.demoproject.advancedmapping.entities.Item;
 import com.demoproject.advancedmapping.entities.User;
 import com.demoproject.advancedmapping.entities.UserDetails;
 import org.springframework.boot.CommandLineRunner;
@@ -34,8 +35,42 @@ public class AdvancedMappingApplication {
 			//findUserWithCharactersJoinFetch(appDAO, 3L);
 			//updateCharacter(appDAO, 10L);
 			//deleteUserByIdWithoutCharacters(appDAO, 4L);
-			deleteCharacterById(appDAO, 11L);
+			//deleteCharacterById(appDAO, 11L);
+			//createCharacterAndItem(appDAO);
+			//findCharacterWithItemsById(appDAO, 10L);
+			//deleteCharacterWithItems(appDAO, 11L);
+			deleteCharacterWithItemsTestWithoutSQL_FetchJoin(appDAO, 11L);
 		};
+	}
+
+	private void deleteCharacterWithItemsTestWithoutSQL_FetchJoin(AppDAO appDAO, long l) {
+		System.out.println("Deleting Character with Items by id: " + l);
+		appDAO.deleteCharacterById(l);
+		System.out.println("Done!");
+	}
+
+
+	private void deleteCharacterWithItems(AppDAO appDAO, long l) {
+		System.out.println("Deleting Character with Items by id: " + l);
+		appDAO.deleteCharacterAndItemsById(l);
+		System.out.println("Done!");
+	}
+
+	private void findCharacterWithItemsById(AppDAO appDAO, long l) {
+		System.out.println("Finding Character with Items by id: " + l);
+		Character character = appDAO.findCharacterAndItemsById(l);
+		System.out.println("Character: " + character);
+		System.out.println("Items: " + character.getItems());
+	}
+
+	private void createCharacterAndItem(AppDAO appDAO) {
+		System.out.println("Creating Character");
+		Character character = new Character("LuciusHelios");
+		character.addItem(new Item("CyberSword"));
+		character.addItem(new Item("CyberKnife"));
+		character.addItem(new Item("CyberGun"));
+		System.out.println("Saving Character " + character + " items " + character.getItems());
+		appDAO.saveCharacter(character);
 	}
 
 	private void deleteCharacterById(AppDAO appDAO, long l) {

@@ -38,6 +38,7 @@ public class DemoSecurityConfig {
     }*/
 
     // support for JDBC, no hardcoded Users.
+
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
         JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
